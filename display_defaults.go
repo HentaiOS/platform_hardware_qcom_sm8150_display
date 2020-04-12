@@ -3,8 +3,6 @@ package display
 import (
         "android/soong/android"
         "android/soong/cc"
-
-	"github.com/google/blueprint/proptools"
 )
 
 func init() {
@@ -28,10 +26,6 @@ func display_Defaults(ctx android.LoadHookContext) {
 
 func display_globalDefaults(ctx android.BaseContext) (*bool) {
 	var module_enabled *bool
-
-	if android.ExistentPathForSource(ctx, "vendor/google_devices/coral/proprietary/device-vendor-coral.mk").Valid() == false {
-		module_enabled = proptools.BoolPtr(false)
-	}
 
 	return module_enabled
 }
